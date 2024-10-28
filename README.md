@@ -3,6 +3,9 @@
 
 This repository contains code for a fire line prediction project that utilizes a ConvLSTM-UNet model to predict and visualize fire progression over time. The project includes code for training with K-fold cross-validation, model evaluation, and visualization of predicted and ground truth fire lines.
 
+![Flow Field Prediction](https://github.com/adibgpt/Super-resolution-Turbulence/blob/48f9ead8d55294f7d7d36cdf2dcff28fc7de72dc/2D%20Snapshot.png)
+
+
 ## Table of Contents
 - [Project Structure](#project-structure)
 - [Installation](#installation)
