@@ -1,0 +1,6 @@
+torch==1.10.0                # PyTorch for deep learning
+torchmetrics==0.11.0         # Metrics such as SSIM and PSNR
+numpy==1.21.4                # Numerical operations
+scikit-learn==1.0.2          # K-Fold cross-validation
+matplotlib==3.4.3            # Plotting and animations
+pickle5                      # File serialization for Python objects
