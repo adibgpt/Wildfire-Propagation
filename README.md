@@ -34,8 +34,8 @@ The framework combines **ConvLSTM** (for temporal features) and **UNet** (for sp
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/conv-lstm-unet-fireline.git
-   cd conv-lstm-unet-fireline
+   git clone https://github.com/adibgpt/Wildfire-Propagation.git
+   cd Wildfire-Propagation
    ```
 
 2. Install the required dependencies:
