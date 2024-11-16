@@ -65,6 +65,7 @@ The `k_fold_training.py` script implements the training loop:
 
 ![MSE](https://github.com/adibgpt/Wildfire-Propagation/blob/062ebcc029740a0ac27b56b073d99cf54014dc21/Images/MSE.png)
 ![PSNR](https://github.com/adibgpt/Wildfire-Propagation/blob/8c0f3b5fee274a66386083e095a0e2204a759421/Images/PSNR.png)
+![SSIM](https://github.com/adibgpt/Wildfire-Propagation/blob/c78b779c123776808b50d09ab0c2d5abd755061f/Images/SSIM.png)
 
 ### Post-Training Prediction
 
