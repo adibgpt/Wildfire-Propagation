@@ -64,6 +64,7 @@ The `k_fold_training.py` script implements the training loop:
 - Metrics like MSE, SSIM, and PSNR are tracked per epoch and fold.
 
 ![MSE](https://github.com/adibgpt/Wildfire-Propagation/blob/062ebcc029740a0ac27b56b073d99cf54014dc21/Images/MSE.png)
+![PSNR](https://github.com/adibgpt/Wildfire-Propagation/blob/8c0f3b5fee274a66386083e095a0e2204a759421/Images/PSNR.png)
 
 ### Post-Training Prediction
 
