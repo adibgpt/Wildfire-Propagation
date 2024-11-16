@@ -1,103 +1,146 @@
 
-# Fire Prediction Model using ConvLSTM-UNet
+# ConvLSTM-UNet Framework for Fireline Prediction
 
-This repository contains code for a fire line prediction project that utilizes a ConvLSTM-UNet model to predict and visualize fire progression over time. The project includes code for training with K-fold cross-validation, model evaluation, and visualization of predicted and ground truth fire lines.
+This repository implements a framework for using **ConvLSTM-UNet** models to predict fireline behavior and dynamics, incorporating K-Fold training, post-training evaluation, and visualization.
 
-![Flow Field Prediction](https://github.com/adibgpt/Wildfire-Propagation/blob/dbad78c329f9c40f82c301abe5b705868fcbe79d/wildfires_firebench_Dataset.width-1250.png)
+---
 
 ## Table of Contents
-- [Project Structure](#project-structure)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Configuration](#configuration)
-- [Output](#output)
-- [License](#license)
+
+1. [Overview](#overview)
+2. [Installation](#installation)
+3. [Components](#components)
+   - [Initialization](#initialization)
+   - [Training](#training)
+   - [Post-Training Prediction](#post-training-prediction)
+   - [Visualization](#visualization)
+4. [Usage](#usage)
 
 ---
 
-### Project Structure
+## Overview
 
-The project is divided into modular scripts for better organization and usability:
+The framework combines **ConvLSTM** (for temporal features) and **UNet** (for spatial resolution enhancement) to process multi-channel datasets. It performs:
 
-- **`data_processing.py`**: Contains functions for loading and preprocessing dataset files.
-- **`model.py`**: Defines the ConvLSTM-UNet model architecture.
-- **`training.py`**: Handles training using K-fold cross-validation and logs metrics.
-- **`prediction.py`**: For model predictions and metrics calculation.
-- **`visualization.py`**: Generates plots and animations, including the prediction vs. ground truth fire line animations.
-- **`config.yaml`** (optional): Stores configuration parameters for easy adjustments.
-
-Additional directories:
-- **`data/`**: Place your dataset files here.
-- **`results/plots/`**: Contains metric plots generated during training and testing.
-- **`results/animations/`**: Stores generated animations of fire line predictions.
+- **K-Fold Cross-Validation**: To assess model robustness.
+- **Post-Training Prediction**: For long-term fireline dynamics.
+- **Visualization**: Includes animations of fireline prediction and difference plots.
 
 ---
 
-### Installation
+## Installation
 
-To run this project, follow these steps:
+1. Clone the repository:
 
-1. **Clone the repository**:
    ```bash
-   git clone https://github.com/your-username/fire-prediction-model.git
-   cd fire-prediction-model
+   git clone https://github.com/your-username/conv-lstm-unet-fireline.git
+   cd conv-lstm-unet-fireline
    ```
 
-2. **Install dependencies**:
-   Install the required Python packages using `requirements.txt`:
+2. Install the required dependencies:
+
    ```bash
    pip install -r requirements.txt
    ```
 
 ---
 
-### Usage
+## Components
 
-The project is designed to be run in stages. Each script handles a specific part of the pipeline. Below is the typical order of execution:
+### Initialization
 
-1. **Data Processing**:
-   Run `data_processing.py` to preprocess the data. Ensure that your dataset is placed in the `data/` directory.
+The code initializes key hyperparameters and prepares the dataset for use:
 
-   ```bash
-   python data_processing.py
-   ```
+- Variables like `sequence_length`, `n_channels`, and `nx`, `ny` for spatial resolution are set.
+- GPU acceleration is used with CUDA where available.
 
-2. **Model Training**:
-   Use `training.py` to train the model with K-fold cross-validation. Metrics are saved in the `results/plots/` directory.
+### Training
 
-   ```bash
-   python training.py
-   ```
+The `k_fold_training.py` script implements the training loop:
 
-3. **Prediction**:
-   Run `prediction.py` to make predictions on the test set and generate evaluation metrics.
+- **K-Fold Cross-Validation** ensures robust training by splitting the data into `n_splits` folds.
+- Mixed-precision training is enabled using `torch.cuda.amp` for faster computations.
+- Metrics like MSE, SSIM, and PSNR are tracked per epoch and fold.
 
-   ```bash
-   python prediction.py
-   ```
+### Post-Training Prediction
 
-4. **Visualization**:
-   Use `visualization.py` to create visualizations of the predicted fire lines and other metrics.
+`post_training_predictions.py` handles predictions and includes:
 
-   ```bash
-   python visualization.py
-   ```
+- **Custom Loss Functions**:
+  - `STE_Loss`: Computes the sum difference error.
+  - `JaccardSimilarity`: Measures IoU for fireline data.
+- Long-term predictions based on input sequences.
+- Inverse normalization for real-world interpretations.
 
----
+### Visualization
 
-### Configuration
+The `result_visualization.py` script generates:
 
-To customize parameters like sequence length, number of epochs, batch size, and data paths, modify the **`config.yaml`** file (if included) or edit these variables directly in the scripts.
-
----
-
-### Output
-
-- **Plots**: Saved in `results/plots/` and include metrics like MSE, SSIM, and PSNR.
-- **Animations**: Stored in `results/animations/` and display predicted vs. ground truth fire lines and other visualizations.
+- **Metric Plots**:
+  - MSE, SSIM, and PSNR trends.
+- **Difference Plots**:
+  - Visualize deviations between predictions and ground truth.
+- **Fireline Animation**:
+  - Animated fireline progression over time.
 
 ---
 
-### License
+## Usage
 
-This project is licensed under the MIT License. See `LICENSE` for more information.
+### Training the Model
+
+Run the training script:
+
+```bash
+python k_fold_training.py
+```
+
+This performs K-Fold cross-validation and saves the trained models and evaluation metrics.
+
+### Post-Training Predictions
+
+Make predictions and save results:
+
+```bash
+python post_training_predictions.py
+```
+
+### Visualizing Results
+
+Generate metric plots and animations:
+
+```bash
+python result_visualization.py
+```
+
+### Example Fireline Prediction
+
+Example animations and plots are saved as `.gif` and `.png` files in the project directory.
+
+---
+
+## File Structure
+
+```plaintext
+├── init_variables.py          # Initialize model and dataset variables
+├── k_fold_training.py         # K-Fold cross-validation training loop
+├── post_training_predictions.py # Post-training prediction logic
+├── result_visualization.py    # Visualization of metrics and results
+├── conv_lstm_unet.py          # ConvLSTM-UNet model definition
+├── clear_cuda.py              # Script to clear CUDA memory
+├── requirements.txt           # Required Python libraries
+├── README.md                  # Documentation
+```
+
+---
+
+## Example Results
+
+- **Fireline Animation**: Shows predicted and ground truth firelines over time.
+- **MSE and SSIM Plots**: Evaluate model performance across epochs.
+
+---
+
+## License
+
+This repository is open-source and available under the MIT license.
