@@ -3,7 +3,7 @@
 
 This repository implements a framework for using **ConvLSTM-UNet** models to predict fireline behavior and dynamics, incorporating K-Fold training, post-training evaluation, and visualization.
 
-(https://github.com/adibgpt/Wildfire-Propagation/blob/ba5ff2c277f8fc9ff71bfeb5a7856ad9f5846305/wildfires_firebench_Dataset.width-1250.png)
+![Wildfire Simulation](https://github.com/adibgpt/Wildfire-Propagation/blob/ba5ff2c277f8fc9ff71bfeb5a7856ad9f5846305/wildfires_firebench_Dataset.width-1250.png)
 ---
 
 ## Table of Contents
