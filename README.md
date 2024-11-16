@@ -123,14 +123,20 @@ Example animations and plots are saved as `.gif` and `.png` files in the project
 ## File Structure
 
 ```plaintext
-├── init_variables.py          # Initialize model and dataset variables
-├── k_fold_training.py         # K-Fold cross-validation training loop
-├── post_training_predictions.py # Post-training prediction logic
-├── result_visualization.py    # Visualization of metrics and results
-├── conv_lstm_unet.py          # ConvLSTM-UNet model definition
-├── clear_cuda.py              # Script to clear CUDA memory
-├── requirements.txt           # Required Python libraries
-├── README.md                  # Documentation
+Wildfire-Propagation
+├── LICENSE
+├── README.md
+├── requirements.txt
+├── scripts
+│   ├── clear_cuda.py
+│   ├── conv_lstm_unet.py
+│   ├── data_preprocessing.py
+│   ├── init_variables.py
+│   ├── k_fold_training.py
+│   ├── post_training_evaluation.py
+│   ├── post_training_fireline_evaluation.py
+│   ├── post_training_predictions.py
+│   └── result_visualization.py
 ```
 
 ---
