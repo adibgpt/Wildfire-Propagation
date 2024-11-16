@@ -63,6 +63,8 @@ The `k_fold_training.py` script implements the training loop:
 - Mixed-precision training is enabled using `torch.cuda.amp` for faster computations.
 - Metrics like MSE, SSIM, and PSNR are tracked per epoch and fold.
 
+![MSE](https://github.com/adibgpt/Wildfire-Propagation/blob/062ebcc029740a0ac27b56b073d99cf54014dc21/Images/MSE.png)
+
 ### Post-Training Prediction
 
 `post_training_predictions.py` handles predictions and includes:
