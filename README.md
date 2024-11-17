@@ -90,6 +90,7 @@ The `result_visualization.py` script generates:
   - Visualize deviations between predictions and ground truth.
 
 ![Fireline](https://github.com/adibgpt/Wildfire-Propagation/blob/31dca939c67888140f57d698b3b4a6b386f72b3b/Visualization/u8_ramp15_filt8_tstartpred70.gif)
+![Fireline](https://github.com/adibgpt/Wildfire-Propagation/blob/c67d8a59a954896a3796125b425c71a36cffec21/Visualization/u18_ramp15_filt8_tstartpred96.gif)
 
 - **Fireline Animation**:
   - Animated fireline progression over time.
