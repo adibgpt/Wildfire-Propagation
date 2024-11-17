@@ -90,6 +90,7 @@ The `result_visualization.py` script generates:
 
 ![Fireline](https://github.com/adibgpt/Wildfire-Propagation/blob/a38ec4e5f142265229e99a0cdd5086727b3a1201/Visualization/u8_ramp7.5_filt8_fireline_prediction.gif)
 ![Fireline](https://github.com/adibgpt/Wildfire-Propagation/blob/de467e656c0d898856fc98424a0d2782fbe13889/Visualization/u8_ramp15_filt8_fireline_prediction.gif)
+![Fireline](https://github.com/adibgpt/Wildfire-Propagation/blob/d17cc25174bffd74f039142dae67c2626768e34e/Visualization/u18_ramp2.5_filt8_fireline_prediction.gif)
 
 ---
 
