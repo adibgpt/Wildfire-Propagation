@@ -88,6 +88,8 @@ The `result_visualization.py` script generates:
 - **Fireline Animation**:
   - Animated fireline progression over time.
 
+![Fireline](https://github.com/adibgpt/Wildfire-Propagation/blob/a38ec4e5f142265229e99a0cdd5086727b3a1201/Visualization/u8_ramp7.5_filt8_fireline_prediction.gif)
+
 ---
 
 ## Usage
