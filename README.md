@@ -85,6 +85,9 @@ The `result_visualization.py` script generates:
   - MSE, SSIM, and PSNR trends.
 - **Difference Plots**:
   - Visualize deviations between predictions and ground truth.
+
+![Fireline](https://github.com/adibgpt/Wildfire-Propagation/blob/31dca939c67888140f57d698b3b4a6b386f72b3b/Visualization/u8_ramp15_filt8_tstartpred70.gif)
+
 - **Fireline Animation**:
   - Animated fireline progression over time.
 
